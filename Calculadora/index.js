@@ -30,7 +30,7 @@ const inputText = document.querySelector('#text');
             operator = "";
             number1 = "";
         }
-         text = `${text.slice(0,text.length-1)}`;
+         text = text.slice(0,text.length-1);
     }
 
     //Método inserir números na tela 
@@ -48,13 +48,13 @@ const inputText = document.querySelector('#text');
             clearAll();
         }
 
-        text = `${text}${number.toString()}`; 
+        text = `${text}${number}`; 
     }
 
     //Método de calcular
     function calculate(operator){
         if(number1 != ""){
-            number2 = (text).split(operator);
+            number2 = text.split(operator);
             number2 = number2[1]; 
         }
 
@@ -86,7 +86,6 @@ const inputText = document.querySelector('#text');
         text = result;
         number1 = "";
         number2 = "";
-        operator = undefined;
     }
 
     //Método de identificação do operador --> Sem operações em sequência
